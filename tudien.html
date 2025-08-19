@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<body>
+<h3>TỪ ĐIỂN ANH - VIỆT</h3>
+<input id="en" placeholder>
+<button id="btn">Tra</button>
+<p id="rs"></p>
+<script>
+    let en = ["apple","banana","cat","dog","hello","book","car"];
+    let vi = ["táo","chuối","mèo","chó","xin chào","sách","ô tô"];
+    let input = document.getElementById("en");
+    let rs = document.getElementById("rs");
+    document.getElementById("btn").onclick = function () {
+        let word = input.value.trim().toLowerCase();
+        let idx = -1;
+        for (let i = 0; i < en.length; i++) {
+            if (en[i] === word) { idx = i; break; }
+        }
+        rs.textContent = (idx !== -1) ? `${en[idx]} → ${vi[idx]}` : "Không tìm thấy";
+    };
+</script>
+</body>
+</html>
